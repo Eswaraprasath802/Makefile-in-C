@@ -4,5 +4,6 @@ hello: main.o add.o
 %.o: %.c
 	gcc -c $^ -o $@
 
-delete:
+.PHONY: clean
+clean:
 	rm *.o hello

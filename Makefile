@@ -1,11 +1,8 @@
-hello.o: main.o add.o
-	gcc $< add.o -o $@
+hello: main.o add.o
+	gcc $^ -o $@
 
-main.o: main.c
-	gcc -c $^ -o $@
-
-add.o: add.c
+%.o: %.c
 	gcc -c $^ -o $@
 
 delete:
-	rm *.o
+	rm *.o hello
